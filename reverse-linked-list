@@ -1,0 +1,75 @@
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+
+// iterative solution
+
+class Solution {
+public:
+    ListNode* reverseList(ListNode* head) {
+        
+        ListNode* curr = head, *prev = NULL;
+        while(curr != NULL)
+        {
+            ListNode* Next = curr->next;
+            curr->next = prev;
+            prev = curr;
+            curr = Next;
+        }
+        return prev;
+    }
+};
+
+
+// recursive 1
+
+class Solution {
+public:
+    ListNode* reverseList(ListNode* curr, ListNode* prev = NULL) {
+        
+        // base case
+        if(curr == NULL)
+            return prev;
+        
+        ListNode* Next = curr->next;
+        curr->next = prev;
+        prev = curr;
+        return reverseList(Next, curr);
+    }
+};
+
+
+// recursive 2
+
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode* reverseList(ListNode* head) {
+        
+        // base case
+        if(head == NULL || head->next == NULL)
+            return head;
+
+        ListNode* newhead = reverseList(head->next);
+
+        head->next->next = head;
+        head->next = NULL;
+        return newhead;
+    }
+};
