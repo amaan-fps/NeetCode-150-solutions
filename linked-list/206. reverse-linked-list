@@ -40,7 +40,6 @@ public:
         
         ListNode* Next = curr->next;
         curr->next = prev;
-        prev = curr;
         return reverseList(Next, curr);
     }
 };
