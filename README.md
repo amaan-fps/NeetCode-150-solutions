@@ -5,7 +5,7 @@ Welcome to my collection of solutions to the DSA (Data Structures and Algorithms
 
 The following list contains problems starting from **Linked-list** and onwards. I will continue to update this list as I solve new problems.
 
-However, I won't include problems that I've already solved before creating this repository, including the topics: **arrays & hashing, two pointers, stack, binary search, and two pointers.**
+However, I won't include problems that I've already solved before creating this repository, including the topics: **arrays & hashing, two pointers, stack, binary search, and sliding window.**
 
 ## Index :bookmark_tabs:
 
