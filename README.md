@@ -21,6 +21,7 @@ However, I won't include problems that I've already solved before creating this 
 ### MEDIUM :turtle:
 
 - [reorder list](linked-list/143.reorder-list)
+- [remove nth node from end of list](linked-list/19.remove-nth-node-from-end-of-list)
 
 Feel free to explore the solutions and learn from them. Happy coding! :smiley:
 ![Goku,Bulma,Woolong gif](https://media.giphy.com/media/9JxRQ6NOf1orK/giphy.gif)
