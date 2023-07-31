@@ -18,4 +18,4 @@ Welcome to my collection of solutions to the DSA (Data Structures and Algorithms
 - [reorder list](linked-list/143.reorder-list)
 
 Feel free to explore the solutions and learn from them. Happy coding! :smiley:
-![Goku,Bulma,Woolong gif]([https://example.com/path/to/your/gif.gif](https://media.giphy.com/media/9JxRQ6NOf1orK/giphy.gif)https://media.giphy.com/media/9JxRQ6NOf1orK/giphy.gif)
+![Goku,Bulma,Woolong gif](https://media.giphy.com/media/9JxRQ6NOf1orK/giphy.gif)
