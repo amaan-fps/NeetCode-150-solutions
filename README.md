@@ -1,6 +1,11 @@
 # NeetCode-150-solutions :rocket:
 
 Welcome to my collection of solutions to the DSA (Data Structures and Algorithms) problems from the NeetCode150 list! :notebook:
+## :warning: Note
+
+The following list contains problems starting from **Linked-list** and onwards. I will continue to update this list as I solve new problems.
+
+However, I won't include problems that I've already solved before creating this repository, including the topics: **arrays & hashing, two pointers, stack, binary search, and two pointers.**
 
 ## Index :bookmark_tabs:
 
