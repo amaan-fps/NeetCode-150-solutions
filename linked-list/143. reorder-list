@@ -1,0 +1,112 @@
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+ 
+// fast - Recursive reverse list function
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode* reverseList(ListNode* head)
+    {
+        if(head == NULL || head->next == NULL)
+            return head;
+
+        ListNode* newhead = reverseList(head->next);
+        head->next->next = head;
+        head->next = NULL;
+
+        return newhead;
+    }
+
+    void reorderList(ListNode* head) {
+        
+        // find middle node
+        ListNode* slow = head, *fast = head;
+
+        while(fast != NULL && fast->next != NULL)
+        {
+            slow = slow->next;
+            fast = fast->next->next;
+        }
+        ListNode* mid = slow;
+
+        // reverse second half
+        ListNode* newhead = reverseList(mid->next);
+        mid->next = NULL;
+
+        // merge two halves to form result
+        while(newhead != NULL)
+        {
+            ListNode* Next1 = head->next, *Next2 = newhead->next;
+            head->next = newhead;
+            newhead->next = Next1;
+
+            head = Next1;
+            newhead = Next2;
+        }
+    }
+};
+
+
+// Memory Optimized - Iterative reverse list function
+class Solution {
+public:
+    ListNode* reverseList(ListNode* head)
+    {
+        ListNode* prev = NULL, *Next;
+
+        while(head != NULL)
+        {
+            Next = head->next;
+            head->next = prev;
+
+            prev = head;
+            head = Next;
+        }
+
+        return prev;
+    }
+
+    void reorderList(ListNode* head) {
+        
+        // find middle node
+        ListNode* slow = head, *fast = head;
+
+        while(fast != NULL && fast->next != NULL)
+        {
+            slow = slow->next;
+            fast = fast->next->next;
+        }
+
+        // reverse second half
+        ListNode* newhead = reverseList(slow->next);
+        slow->next = NULL;
+
+        // merge two halves to form result
+        while(newhead != NULL)
+        {
+            ListNode* Next1 = head->next, *Next2 = newhead->next;
+            head->next = newhead;
+            newhead->next = Next1;
+
+            head = Next1;
+            newhead = Next2;
+        }
+    }
+};
