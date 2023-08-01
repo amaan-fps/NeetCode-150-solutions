@@ -1,0 +1,110 @@
+/*
+// Definition for a Node.
+class Node {
+public:
+    int val;
+    Node* next;
+    Node* random;
+    
+    Node(int _val) {
+        val = _val;
+        next = NULL;
+        random = NULL;
+    }
+};
+*/
+// iterative and extra space
+class Solution {
+public:
+    Node* copyRandomList(Node* head) {
+        
+        unordered_map<Node*, Node*> nodes;
+
+        if(head == NULL)
+            return NULL;
+
+        // create copy of nodes
+        Node* curr = head;
+        while(curr != NULL)
+        {
+            nodes[curr] = new Node(curr->val);
+            curr = curr->next;
+        }
+
+        // set their next and random pointers
+        curr = head;
+        while(curr != NULL)
+        {
+            nodes[curr]->next = nodes[curr->next];
+            nodes[curr]->random = nodes[curr->random];
+            curr = curr->next;
+        }
+
+        return nodes[head];
+    }
+};
+
+// recursive and extra space
+class Solution {
+private:
+    unordered_map<Node*, Node*> node_visited;
+public:
+    Node* copyRandomList(Node* head) {
+        
+        if(head == NULL || node_visited.count(head) > 0) // node created already
+            return node_visited[head];
+
+        Node *curr = new Node(head->val);
+        node_visited[head] = curr;
+
+        curr->random = copyRandomList(head->random);
+        curr->next = copyRandomList(head->next);
+        
+        return curr;
+    }
+};
+
+// constant space(interweaving)
+class Solution {
+public:
+    Node* copyRandomList(Node* head) {
+        
+        if(head == NULL)
+            return NULL;
+
+        // create copy nodes
+        Node* curr = head;
+        while(curr != NULL)
+        {
+            Node* copy = new Node(curr->val);
+            copy->next = curr->next;
+            curr->next = copy;
+            curr = curr->next->next;
+        }
+
+        // update random pointers of copy nodes
+        curr = head;
+        while(curr != NULL)
+        {
+            if(curr->random != NULL)
+                curr->next->random = curr->random->next;
+            curr = curr->next->next;
+        }
+
+        // separate copy list and original list
+        curr = head;
+        Node* copy_head = head->next;
+        Node* copy_curr = head->next;
+        while(curr != NULL)
+        {
+            curr->next = curr->next->next;
+            if(copy_curr->next != NULL)
+                copy_curr->next = copy_curr->next->next;
+            
+            curr = curr->next;
+            copy_curr = copy_curr->next;
+        }
+
+        return copy_head;
+    }
+};
