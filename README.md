@@ -17,6 +17,7 @@ However, I won't include problems that I've already solved before creating this 
 
 - [reverse linked list](linked-list/206.reverse-linked-list)
 - [merge two sorted lists](linked-list/21.merge-two-sorted-lists)
+- [linked list cycle](linked-list/141.linked-list-cycle)
 
 ### MEDIUM :turtle:
 
