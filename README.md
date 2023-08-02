@@ -25,6 +25,7 @@ However, I won't include problems that I've already solved before creating this 
 - [remove nth node from end of list](linked-list/19.remove-nth-node-from-end-of-list)
 - [copy list with random pointer](linked-list/138.copy-list-with-random-pointer)
 - [add two numbers](linked-list/2.add-two-numbers)
+- [find the duplicate number](linked-list/287.find-the-duplicate-number)
 
 Feel free to explore the solutions and learn from them. Happy coding! :smiley:
 ![Goku,Bulma,Woolong gif](https://media.giphy.com/media/9JxRQ6NOf1orK/giphy.gif)
