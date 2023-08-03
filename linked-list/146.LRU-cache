@@ -1,0 +1,86 @@
+class LRUCache {
+private:
+    struct Node {
+        int key;
+        int val;
+        Node* next;
+        Node* prev;
+
+        Node(int _key, int _val)
+        {
+            key = _key;
+            val = _val;
+            next = NULL;
+            prev = NULL;
+        }
+    };
+
+    int cap;
+    unordered_map<int, Node*> cache;
+    Node* left, *right;
+    
+public:
+    LRUCache(int capacity) {
+        cap = capacity;
+        // left: LRU right: Most recently used
+        left = new Node(0, 0);
+        right = new Node(0, 0);
+        left->next = right;
+        right->prev = left;
+    }
+    
+    void reorder_node(Node* node)
+    {   
+        node->prev->next = node->next;
+        node->next->prev = node->prev;
+        node->prev = right->prev;
+        node->next = right;
+        right->prev->next = node;
+        right->prev = node;
+    }
+
+    void remove_head()
+    {
+        cache.erase(left->next->key);
+        left->next = left->next->next;
+        left->next->prev = left;
+    }
+
+    int get(int key) {
+        if(cache.find(key) != cache.end())
+        {
+            reorder_node(cache[key]);
+            return cache[key]->val;
+        }
+        else
+            return -1;
+    }
+    
+    void put(int key, int value) {
+        
+        if(cache.find(key) != cache.end())
+        {
+            cache[key]->val = value;
+            reorder_node(cache[key]);
+        }
+        else
+        {
+            Node *newnode = new Node(key, value); 
+            cache[key] = newnode;
+            newnode->next = right;
+            newnode->prev = right->prev;
+            right->prev->next = newnode;
+            right->prev = newnode;
+        }
+
+        if(cache.size() > cap)
+            remove_head();
+    }
+};
+
+/**
+ * Your LRUCache object will be instantiated and called as such:
+ * LRUCache* obj = new LRUCache(capacity);
+ * int param_1 = obj->get(key);
+ * obj->put(key,value);
+ */
