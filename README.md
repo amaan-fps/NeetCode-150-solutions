@@ -28,5 +28,10 @@ However, I won't include problems that I've already solved before creating this 
 - [find the duplicate number](linked-list/287.find-the-duplicate-number)
 - [LRU cache](linked-list/146.LRU-cache)
 
+### HARD :fire:
+
+- [merge k sorted lists](linked-list/23.merge-k-sorted-lists)
+
+
 Feel free to explore the solutions and learn from them. Happy coding! :smiley:
 ![Goku,Bulma,Woolong gif](https://media.giphy.com/media/9JxRQ6NOf1orK/giphy.gif)
