@@ -1,0 +1,99 @@
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
+        
+        ListNode* curr = new ListNode();
+        ListNode* head = curr;
+
+        while(list1 != NULL && list2 != NULL)
+        {
+            if(list2->val < list1->val)
+            {
+                curr->next = list2;
+                list2 = list2->next;
+            }
+            else
+            {
+                curr->next = list1;
+                list1 = list1->next;
+            }
+            curr = curr->next;
+        }
+
+        if(list1) curr->next = list1;
+        if(list2) curr->next = list2;
+
+        return head->next;
+    }
+
+    ListNode* mergeKLists(vector<ListNode*>& lists) {
+        
+        int k = lists.size();
+        if(!k) return NULL;
+
+        ListNode* res = lists[0];
+        for(int i = 1; i < k; i++)
+           res = mergeTwoLists(res, lists[i]);
+
+        return res;
+    }
+};
+
+// merge sort
+class Solution {
+public:
+    ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
+        
+        ListNode* curr = new ListNode();
+        ListNode* head = curr;
+
+        while(list1 != NULL && list2 != NULL)
+        {
+            if(list2->val < list1->val)
+            {
+                curr->next = list2;
+                list2 = list2->next;
+            }
+            else
+            {
+                curr->next = list1;
+                list1 = list1->next;
+            }
+            curr = curr->next;
+        }
+
+        if(list1) curr->next = list1;
+        if(list2) curr->next = list2;
+
+        return head->next;
+    }
+
+    ListNode* mergeLists(vector<ListNode*>& lists, int left, int right)
+    {
+        if(left == right)
+            return lists[left];
+
+        int mid = left + (right-left) / 2;
+
+        ListNode* l1 = mergeLists(lists, left, mid);
+        ListNode* l2 = mergeLists(lists, mid+1, right);
+
+        return mergeTwoLists(l1, l2);
+    }
+
+    ListNode* mergeKLists(vector<ListNode*>& lists) {
+        
+        if(lists.empty()) return NULL;
+        return mergeLists(lists, 0, lists.size()-1);
+    }
+};
