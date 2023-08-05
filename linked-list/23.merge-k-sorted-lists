@@ -49,7 +49,7 @@ public:
     }
 };
 
-// merge sort
+// merge sort recursive
 class Solution {
 public:
     ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
@@ -95,5 +95,110 @@ public:
         
         if(lists.empty()) return NULL;
         return mergeLists(lists, 0, lists.size()-1);
+    }
+};
+
+
+// 1 iterative merge sort - constant space
+class Solution {
+public:
+    ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
+        
+        ListNode* curr = new ListNode();
+        ListNode* head = curr;
+
+        while(list1 != NULL && list2 != NULL)
+        {
+            if(list2->val < list1->val)
+            {
+                curr->next = list2;
+                list2 = list2->next;
+            }
+            else
+            {
+                curr->next = list1;
+                list1 = list1->next;
+            }
+            curr = curr->next;
+        }
+
+        if(list1) curr->next = list1;
+        if(list2) curr->next = list2;
+
+        return head->next;
+    }
+
+    ListNode* mergeKLists(vector<ListNode*>& lists)
+    {
+        int k = lists.size();
+        if (k == 0) return nullptr;
+
+        // Perform bottom-up merge sort
+        int interval = 1;
+        while (interval < k) {
+            for (int i = 0; i + interval < k; i += interval * 2) {
+                lists[i] = mergeTwoLists(lists[i], lists[i + interval]);
+            }
+            interval *= 2;
+        }
+
+        return lists[0];
+    }
+};
+
+// 2 iterative merge sort with temp list
+class Solution {
+public:
+    ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
+        
+        ListNode* curr = new ListNode();
+        ListNode* head = curr;
+
+        while(list1 != NULL && list2 != NULL)
+        {
+            if(list2->val < list1->val)
+            {
+                curr->next = list2;
+                list2 = list2->next;
+            }
+            else
+            {
+                curr->next = list1;
+                list1 = list1->next;
+            }
+            curr = curr->next;
+        }
+
+        if(list1) curr->next = list1;
+        if(list2) curr->next = list2;
+
+        return head->next;
+    }
+
+    ListNode* mergeKLists(vector<ListNode*>& lists)
+    {
+        int k = lists.size();
+        if (k == 0) return nullptr;
+
+        // Perform bottom-up merge sort with a temp list
+        while(lists.size() > 1)
+        {
+            vector<ListNode*> temp;
+            for(int i = 0; i < lists.size(); i += 2)
+            {
+                ListNode* l1 = lists[i];
+                ListNode* l2;
+                
+                if(i+1 < lists.size())
+                    l2 = lists[i+1];
+                else
+                    l2 = NULL;
+                
+                temp.push_back(mergeTwoLists(l1, l2));
+            }
+            lists = temp;
+        }
+
+        return lists[0];
     }
 };
