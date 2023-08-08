@@ -31,6 +31,7 @@ However, I won't include problems that I've already solved before creating this 
 ### HARD :fire:
 
 - [merge k sorted lists](linked-list/23.merge-k-sorted-lists)
+- [reverse nodes in k-group](linked-list/25.reverse-nodes-in-k-group)
 
 
 Feel free to explore the solutions and learn from them. Happy coding! :smiley:
