@@ -52,3 +52,46 @@ public:
         return dummy.next;
     }
 };
+
+
+// without finding length of the list at once rather checking the reversibility of the group on-the-go
+class Solution {
+public:
+    ListNode* FindKthNode(ListNode* curr, int k)
+    {
+        while(curr && k > 0)
+        {
+            curr = curr->next;
+            k -= 1;
+        }
+        return curr;
+    }
+
+    ListNode* reverseKGroup(ListNode* head, int k) {
+        
+        ListNode dummy(0, head);
+        ListNode* prevTail = &dummy;
+
+        while(1)
+        {
+            ListNode* kth = FindKthNode(prevTail, k);
+            if(!kth)
+                break;
+
+            ListNode* prev = kth->next, *nextgroupnode = kth->next, *curr = prevTail->next;
+            while(curr != nextgroupnode)
+            {
+                ListNode* temp = curr->next;
+                curr->next = prev;
+                prev = curr;
+                curr = temp;
+            }
+
+            ListNode* tmp = prevTail->next;
+            prevTail->next = kth;
+            prevTail = tmp;
+        }
+
+        return dummy.next;
+    }
+};
