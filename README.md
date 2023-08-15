@@ -10,6 +10,7 @@ However, I won't include problems that I've already solved before creating this 
 ## Index :bookmark_tabs:
 
 - [Linked-list](#linked-list)
+- [Trees](#trees)
 
 ## <a name="linked-list"></a>Linked-list Problems :link:
 
@@ -33,6 +34,15 @@ However, I won't include problems that I've already solved before creating this 
 - [merge k sorted lists](linked-list/23.merge-k-sorted-lists)
 - [reverse nodes in k-group](linked-list/25.reverse-nodes-in-k-group)
 
+## <a name="trees"></a>Tree Problems :link:
+
+### EASY :baby_chick:
+- [invert binary tree](trees/226.invert-binary-tree)
+- [maximum depth of binary tree](trees/104.maximum-depth-of-binary-tree)
+- [diameter of binary tree](trees/543.diameter-binary-tree)
+- [balanced binary tree](trees/110.balanced-binary-tree)
+- [same tree](trees/100.same-tree)
+- [subtree of another tree](trees/572.subtree-of-another-tree)
 
 Feel free to explore the solutions and learn from them. Happy coding! :smiley:
 ![Goku,Bulma,Woolong gif](https://media.giphy.com/media/9JxRQ6NOf1orK/giphy.gif)
