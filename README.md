@@ -39,7 +39,7 @@ However, I won't include problems that I've already solved before creating this 
 ### EASY :baby_chick:
 - [invert binary tree](trees/226.invert-binary-tree)
 - [maximum depth of binary tree](trees/104.maximum-depth-of-binary-tree)
-- [diameter of binary tree](trees/543.diameter-binary-tree)
+- [diameter of binary tree](trees/543.diameter-of-binary-tree)
 - [balanced binary tree](trees/110.balanced-binary-tree)
 - [same tree](trees/100.same-tree)
 - [subtree of another tree](trees/572.subtree-of-another-tree)
