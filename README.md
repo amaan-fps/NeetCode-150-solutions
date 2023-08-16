@@ -37,12 +37,20 @@ However, I won't include problems that I've already solved before creating this 
 ## <a name="trees"></a>Tree Problems :link:
 
 ### EASY :baby_chick:
+
 - [invert binary tree](trees/226.invert-binary-tree)
 - [maximum depth of binary tree](trees/104.maximum-depth-of-binary-tree)
 - [diameter of binary tree](trees/543.diameter-of-binary-tree)
 - [balanced binary tree](trees/110.balanced-binary-tree)
 - [same tree](trees/100.same-tree)
 - [subtree of another tree](trees/572.subtree-of-another-tree)
+
+### MEDIUM :turtle:
+
+- [lowest common ancestor of a binary search tree](trees/235.lowest-common-ancestor-of-a-binary-search-tree)
+- [binary tree level order traversal](trees/102.binary-tree-level-order-traversal)
+- [binary tree right side view](trees/199.binary-tree-right-side-view)
+- [count good nodes in binary tree](trees/1448.count-good-nodes-in-binary-tree)
 
 Feel free to explore the solutions and learn from them. Happy coding! :smiley:
 ![Goku,Bulma,Woolong gif](https://media.giphy.com/media/9JxRQ6NOf1orK/giphy.gif)
