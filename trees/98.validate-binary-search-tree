@@ -1,0 +1,78 @@
+// iterative
+class Solution {
+public:
+    bool isValidBST(TreeNode* root) {
+        
+        stack<TreeNode*> s;
+        TreeNode* curr = root, *prev = NULL;
+
+        while(curr || !s.empty())
+        {
+            while(curr)
+            {
+                s.push(curr);
+                curr = curr->left;
+            }
+
+            curr = s.top();
+            s.pop();
+
+            if(prev && curr->val <= prev->val)
+                return false;
+            prev = curr;
+
+            curr = curr->right;
+        }
+
+        return true;
+    }
+};
+
+// recursive
+class Solution {
+public:
+    long p = 0-2147483649; // INT_MIN-1 because INT_MIN <= Node.val <= INT_MAX
+    
+    bool isValidBST(TreeNode* r) {
+        
+        if(!r) return true;
+
+        bool left = isValidBST(r->left);
+        if(!left) return left;
+        
+        if(p >= r->val) return false;
+        p = r->val;
+
+        bool right = isValidBST(r->right);
+        
+        return left && right;
+    }
+};
+
+// recursive more clean
+class Solution {
+public:
+    long p = 0-2147483649; // INT_MIN-1 because INT_MIN <= Node.val <= INT_MAX
+    
+    bool isValidBST(TreeNode* r) {
+        
+        if(!r) return true;
+
+        if(!isValidBST(r->left)) return false;
+
+        if(p >= r->val) return false;
+        p = r->val;
+
+        return isValidBST(r->right);
+    }
+};
+
+// recursive ultimate god level
+class Solution {
+public:
+    long p = 0-2147483649; // INT_MIN-1 because INT_MIN <= Node.val <= INT_MAX
+    
+    bool isValidBST(TreeNode* r) {
+        return  !r || (isValidBST(r->left) && (p < r->val) && ((p = r->val) || (r->val == 0)) && isValidBST(r->right));
+    }
+};
