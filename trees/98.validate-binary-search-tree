@@ -1,3 +1,4 @@
+---------------------------------------------------> (in-order traversal)
 // iterative
 class Solution {
 public:
@@ -74,5 +75,33 @@ public:
     
     bool isValidBST(TreeNode* r) {
         return  !r || (isValidBST(r->left) && (p < r->val) && ((p = r->val) || (r->val == 0)) && isValidBST(r->right));
+    }
+};
+
+
+---------------------------------------------------> DIFFERENT LOGIC (pre-order traversal)
+// neetcode solution
+class Solution {
+public:
+    bool isValidBST(TreeNode* r, long s = 0-2147483649, long e = 2147483648) {
+        
+        if(!r) return true;
+
+        if(!(s < r->val && r->val < e)) return false;
+
+        return isValidBST(r->left, s, r->val) && isValidBST(r->right, r->val, e);
+    }
+};
+
+// super saiyan of above code
+#define d isValidBST
+#define k val
+#define l left
+#define r right
+
+class Solution {
+public:
+    bool d(TreeNode* c, long l = 0-2147483649, long r = 2147483648) {
+        return !c || ((l < c->k && c->k < r) && d(c->l, l, c->k) && d(c->r, c->k, r));
     }
 };
