@@ -42,7 +42,7 @@ However, I won't include problems that I've already solved before creating this 
 - [maximum depth of binary tree](trees/104.maximum-depth-of-binary-tree)
 - [diameter of binary tree](trees/543.diameter-of-binary-tree)
 - [balanced binary tree](trees/110.balanced-binary-tree)
-- [same tree](trees/100.same-tree)
+- [same tree](trees/100.same-tree.cpp)
 - [subtree of another tree](trees/572.subtree-of-another-tree)
 
 ### MEDIUM :turtle:
