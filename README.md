@@ -52,6 +52,7 @@ However, I won't include problems that I've already solved before creating this 
 - [binary tree right side view](trees/199.binary-tree-right-side-view)
 - [count good nodes in binary tree](trees/1448.count-good-nodes-in-binary-tree)
 - [validate binary search tree](trees/98.validate-binary-search-tree)
+- [kth smallest element in a BST](trees/230.kth-smallest-element-in-a-bst)
 
 Feel free to explore the solutions and learn from them. Happy coding! :smiley:
 ![Goku,Bulma,Woolong gif](https://media.giphy.com/media/9JxRQ6NOf1orK/giphy.gif)
