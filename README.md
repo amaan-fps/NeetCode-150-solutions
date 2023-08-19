@@ -7,7 +7,7 @@ The following list contains problems starting from **Linked-list** and onwards. 
 
 However, I won't include problems that I've already solved before creating this repository, including the topics: **arrays & hashing, two pointers, stack, binary search, and sliding window.**
 
-## Index :bookmark_tabs:
+## Topics :bookmark_tabs:
 
 - [Linked-list](#linked-list)
 - [Trees](#trees)
@@ -54,6 +54,10 @@ However, I won't include problems that I've already solved before creating this 
 - [validate binary search tree](trees/98.validate-binary-search-tree)
 - [kth smallest element in a BST](trees/230.kth-smallest-element-in-a-bst)
 - [construct binary tree from preorder and inorder traversal](trees/105.construct-binary-tree-from-preorder-and-inorder-traversal.cpp)
+
+### HARD :fire:
+
+- [binary tree maximum path sum](trees/124.binary-tree-maximum-path-sum.cpp)
 
 Feel free to explore the solutions and learn from them. Happy coding! :smiley:
 ![Goku,Bulma,Woolong gif](https://media.giphy.com/media/9JxRQ6NOf1orK/giphy.gif)
