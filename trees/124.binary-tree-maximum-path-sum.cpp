@@ -35,3 +35,31 @@ public:
         return maxSum;
     }
 };
+
+class CleanSolution {
+private:
+    int maxSum = 0-1001;
+public:
+    int dfs(TreeNode* r)
+    {
+        if(!r) return 0;
+
+        int left = dfs(r->left);
+        int right = dfs(r->right);
+        
+        left = max(left, 0);
+        right = max(right, 0);
+
+        int sum = left + right + r->val;
+        int maxPath = max(left, right) + r->val;
+        maxSum = max(sum, max(maxSum, maxPath));
+        
+        return maxPath;
+    }
+
+    int maxPathSum(TreeNode* root) {
+        
+        dfs(root);
+        return maxSum;
+    }
+};
