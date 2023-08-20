@@ -58,6 +58,7 @@ However, I won't include problems that I've already solved before creating this 
 ### HARD :fire:
 
 - [binary tree maximum path sum](trees/124.binary-tree-maximum-path-sum.cpp)
+- [serialize and deserialize binary tree](trees/297.serialize-and-deserialize-binary-tree.cpp)
 
 Feel free to explore the solutions and learn from them. Happy coding! :smiley:
 ![Goku,Bulma,Woolong gif](https://media.giphy.com/media/9JxRQ6NOf1orK/giphy.gif)
