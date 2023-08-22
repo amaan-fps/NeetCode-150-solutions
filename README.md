@@ -11,6 +11,7 @@ However, I won't include problems that I've already solved before creating this 
 
 - [Linked-list](#linked-list)
 - [Trees](#trees)
+- [Tries](#tries)
 
 ## <a name="linked-list"></a>Linked-list Problems :link:
 
@@ -59,6 +60,12 @@ However, I won't include problems that I've already solved before creating this 
 
 - [binary tree maximum path sum](trees/124.binary-tree-maximum-path-sum.cpp)
 - [serialize and deserialize binary tree](trees/297.serialize-and-deserialize-binary-tree.cpp)
+
+## <a name="tries"></a>Tries Problems :link:
+
+### MEDIUM :turtle:
+
+- [implement trie or prefix tree](tries/208.implement-trie-prefix-tree.cpp)
 
 Feel free to explore the solutions and learn from them. Happy coding! :smiley:
 ![Goku,Bulma,Woolong gif](https://media.giphy.com/media/9JxRQ6NOf1orK/giphy.gif)
