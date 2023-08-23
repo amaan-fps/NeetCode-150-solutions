@@ -61,6 +61,7 @@ However, I won't include problems that I've already solved before creating this 
 - [binary tree maximum path sum](trees/124.binary-tree-maximum-path-sum.cpp)
 - [serialize and deserialize binary tree](trees/297.serialize-and-deserialize-binary-tree.cpp)
 - [avl tree insertion](trees/avl-tree-insertion.cpp)
+- [avl tree deletion](trees/avl-tree-deletion.cpp)
 
 ## <a name="tries"></a>Tries Problems :link:
 
