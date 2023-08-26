@@ -69,6 +69,7 @@ However, I won't include problems that I've already solved before creating this 
 ### MEDIUM :turtle:
 
 - [implement trie or prefix tree](tries/208.implement-trie-prefix-tree.cpp)
+- [design add and search words data structure](tries/208.design-add-and-search-words-data-structure.cpp)
 
 ## <a name="heap"></a>Heap Problems :link:
 
