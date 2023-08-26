@@ -12,6 +12,7 @@ However, I won't include problems that I've already solved before creating this 
 - [Linked-list](#linked-list)
 - [Trees](#trees)
 - [Tries](#tries)
+- [Heap](#heap)
 
 ## <a name="linked-list"></a>Linked-list Problems :link:
 
@@ -69,5 +70,12 @@ However, I won't include problems that I've already solved before creating this 
 
 - [implement trie or prefix tree](tries/208.implement-trie-prefix-tree.cpp)
 
+## <a name="heap"></a>Heap Problems :link:
+
+### EASY :baby_chick:
+
+- [kth largest element in a stream](trees/703.kth-largest-element-in-a-stream.cpp)
+
+  
 Feel free to explore the solutions and learn from them. Happy coding! :smiley:
 ![Goku,Bulma,Woolong gif](https://media.giphy.com/media/9JxRQ6NOf1orK/giphy.gif)
