@@ -76,6 +76,7 @@ However, I won't include problems that I've already solved before creating this 
 ### EASY :baby_chick:
 
 - [kth largest element in a stream](Heap/703.kth-largest-element-in-a-stream.cpp)
+- [last-stone-weight](Heap/1046.last-stone-weight.cpp)
 
   
 Feel free to explore the solutions and learn from them. Happy coding! :smiley:
